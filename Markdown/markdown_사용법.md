@@ -42,7 +42,7 @@
 
 ## 코드 블록
 
-'```python'처럼 세쌍따옴표와 언어를 쓴다.
+` ```python `
 
 ```python
 print('Hello, world')
