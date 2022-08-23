@@ -1,4 +1,4 @@
-T = 2
+T = 10
 for tc in range(1, T+1):
     n = int(input())
     s = input()
@@ -13,7 +13,7 @@ for tc in range(1, T+1):
             if str == '(':
                 st.append(str)
             elif str == '*':
-                while st and st[-1] != '*':
+                while st and st[-1] == '*':
                     result += st.pop()
                 st.append(str)
             elif str == '+':
@@ -29,16 +29,16 @@ for tc in range(1, T+1):
 
     #후위 표기식 계산
     #숫자면 result 문자열에, 연산자면 2개 pop 해서 연산하기
-    st2 = []
+    st = []
     for x in result:
         if x.isdigit():
-            st2.append(int(x))
+            st.append(int(x))
         else:
-            a = st2.pop()
-            b = st2.pop()
+            a = st.pop()
+            b = st.pop()
             if x == '+':
-                st2.append(a+b)
+                st.append(a+b)
             if x == '*':
-                st2.append(a*b)
+                st.append(a*b)
 
-    print(f'#{tc} {st2[0]}')
+    print(f'#{tc} {st[0]}')
