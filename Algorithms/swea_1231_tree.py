@@ -1,15 +1,19 @@
-def inorder(a):
-    if a <= N:
-        inorder(a*2)
-        print(lst[a], end='')
-        inorder(a*2+1)
+def inorder(n):
+    if n <= N:
+        inorder(2 * n)
+        print(tree[n], end='')
+        inorder(2 * n + 1)
 
-for tc in range(1,11):
+
+T = 10
+for tc in range(1, T + 1):
     N = int(input())
-    lst = [0] * (N+1)
+    tree = [0] * (N + 1)
     for i in range(N):
-        li = list(input().split())
-        lst[i+1] = li[1]
+        temp = list(input().split())
+        idx = int(temp[0])
+        tree[idx] = temp[1]
+
     print(f'#{tc}', end=' ')
     inorder(1)
     print()
