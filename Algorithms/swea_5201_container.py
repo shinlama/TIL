@@ -11,7 +11,5 @@ for tc in range(1, T + 1):
         if T[-1] >= W[i]:
             result += W[i]
             T.pop(-1)
-        elif T[-1] < W[i]:
-            W.pop(-1)
 
     print(f'#{tc} {result}')
